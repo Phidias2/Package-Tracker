@@ -80,11 +80,11 @@ app.listen(process.env.PORT, function () {
           },
           servers: [
             {
-              url: "http://localhost:3005",
+              url: "http://localhost:3000",
             },
           ],
         },
-        apis: ['./Services/*.js'],
+        apis: ['./routes/*.js'],
       };
       
       const specs = swaggerJsdoc(options);
@@ -93,7 +93,7 @@ app.listen(process.env.PORT, function () {
         swaggerUi.serve,
         swaggerUi.setup(specs, { explorer: true })
       );
-  console.log('listening on 3050')
+  console.log('listening on 3000')
 })
 
 try {
