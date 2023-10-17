@@ -1,0 +1,19 @@
+<!-- <input type="text" [formControl]="packageInput" placeholder="Search for a package...">
+<div *ngIf="filteredPackages?.length">
+  <div *ngFor="let package of filteredPackages" (click)="addDelivery(package)">
+    {{ package.from_name }}
+  </div>
+</div> -->
+
+<input type="text" [formControl]="packageInput" placeholder="Search for a package...">
+
+<div *ngIf="filteredPackages?.length">
+  <div *ngFor="let pkg of filteredPackages" 
+       (click)="selectPackage(pkg)" 
+       [class.selected]="selectedPackage?._id === pkg.id">
+    {{ pkg.from_name }}
+  </div>
+</div>
+
+<button (click)="addDelivery()" [disabled]="!selectedPackage">Confirm Selection</button>
+

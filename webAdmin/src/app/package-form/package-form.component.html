@@ -1,0 +1,124 @@
+<div class="container">
+
+    <h1>Create new package</h1>
+
+    <form #packageForm="ngForm" (ngSubmit)="submit(packageForm.value)">
+
+        <div class="form-group">
+
+            <label for="firstname">Description</label><br>
+
+            <input type="text" name="Description" class="form-control" ngModel>
+
+        </div>
+
+        <pre></pre>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="weight">Weight</label>
+                    <input type="number" name="weight" class="form-control" ngModel>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="width">Width</label>
+                    <input type="numbe" name="width" class="form-control" ngModel>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="height">height</label>
+                    <input type="number" name="height" class="form-control" ngModel>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="depth">depth</label>
+                    <input type="number" name="depth" class="form-control" ngModel>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+
+            <label for="from_name">Sender name</label><br>
+
+            <input type="text" name="from_name" class="form-control" ngModel>
+
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+
+            <label for="from_address">Sender address</label><br>
+
+            <input type="text" name="from_address" class="form-control" ngModel>
+
+        </div>
+
+        <pre></pre>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="height">latitude</label>
+                    <input type="number" name="from_lat" class="form-control" ngModel>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="depth">longitude</label>
+                    <input type="number" name="from_lng" class="form-control" ngModel>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <label for="to_name">Receiver name</label><br>
+
+            <input type="text" name="to_name" class="form-control" ngModel>
+
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+
+            <label for="to_address">Receiver address</label><br>
+
+            <input type="text" name="to_address" class="form-control" ngModel>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="height">latitude</label>
+                    <input type="number" name="to_lat" class="form-control" ngModel>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="depth">longitude</label>
+                    <input type="number" name="to_lng" class="form-control" ngModel>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+</div>

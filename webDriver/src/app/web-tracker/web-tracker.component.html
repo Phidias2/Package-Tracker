@@ -1,0 +1,122 @@
+<div class="container mt-4">
+
+    <div class="">
+        <div class="">
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-12">
+                    <div class="input-group  form-sm form-2 pl-0">
+                        <form #delivery="ngForm" (ngSubmit)="fetchDelivery(delivery.value.id)">
+                            <input class="form-control my-0 py-1 pl-3 purple-border" name="id" type="text"
+                                placeholder="Enter delivery ID" aria-label="Search" ngModel>
+                            <button class="btn btn-primary">Track</button>
+                        </form>
+
+                    </div>
+                </div>
+                <!-- Grid column -->
+            </div>
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h3 >Package detail</h3>
+                        <span class="d-block">active_delivery_id : {{ packageDetails.active_delivery_id }}</span>
+                        <span class="d-block">depth : {{packageDetails.depth}}</span>
+                        <span class="d-block">width : {{packageDetails.width}}</span>
+                        <span class="d-block">height : {{packageDetails.height}}</span>
+                        <span class="d-block">weight : {{packageDetails.weight}}</span>
+                        <span class="d-block">from_address : {{packageDetails.from_address}}</span>
+                        <span class="d-block">from_name : {{packageDetails.from_name}}</span>
+                        <span class="d-block">from_location : ({{packageDetails.from_location.lat}}, {{packageDetails.from_location?.lng}})</span>
+                        <span class="d-block">to_address : {{packageDetails.to_name}}</span>
+                        <span class="d-block">​to_name : {{packageDetails.to_name}}</span>
+                        <span class="d-block">​to_location : ({{packageDetails.to_location.lat}}, {{packageDetails.to_location.lng}})</span>
+                        
+                        <h3 >Delivery detail</h3>
+                        <span class="d-block">package id : {{ deliveryDetails.package_id }}</span>
+                        <span class="d-block">start time : {{ deliveryDetails.start_time }}</span>
+                        <span class="d-block">end time : {{ deliveryDetails.end_time }}</span>
+                        <span class="d-block">end time : {{ deliveryDetails.pickup_time }}</span>
+                        <span class="d-block">status : {{ deliveryDetails.status }}</span>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="leafletMap" style="height: 400px;"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <button class="btn btn-primary" (click)="updateStatus(deliveryDetails._id,'picked-up')" [disabled]="!deliveryDetails">Picked Up</button>
+                        </div>
+                        <div class="m-3">
+                            <button class="btn btn-warning" (click)="updateStatus(deliveryDetails._id,'in-transit')" [disabled]="!deliveryDetails">In-Transit</button>
+                        </div>
+                        <div class="m-3">
+                            <button class="btn btn-success" (click)="updateStatus(deliveryDetails._id,'delivered')" [disabled]="!deliveryDetails">Delivered</button>
+                        </div>
+                        <div class="m-3">
+                            <button class="btn btn-danger" (click)="updateStatus(deliveryDetails._id,'failed')" [disabled]="!deliveryDetails">Failed</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Grid row -->
+            <!--Table-->
+            <!-- <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </div>
+    </div>
+
+
+</div>

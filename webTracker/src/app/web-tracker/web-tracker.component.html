@@ -1,0 +1,51 @@
+<div class="container mt-4">
+
+    <div class="">
+        <div class="">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group  form-sm form-2 pl-0">
+                        <form #package="ngForm" >
+                            <input class="form-control my-0 py-1 pl-3 purple-border" name="id" type="text"
+                                placeholder="Search something here..." aria-label="Search" ngModel>
+                            <button class="btn btn-primary">Track</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 *ngIf="packageDetails">Package details</h3>
+                        ​<span class="d-block">active_delivery_id : {{ packageDetails.active_delivery_id }}</span>
+                        <span class="d-block">depth : {{packageDetails.depth}}</span>
+                        <span class="d-block">width : {{packageDetails.width}}</span>
+                        <span class="d-block">height : {{packageDetails.height}}</span>
+                        <span class="d-block">weight : {{packageDetails.weight}}</span>
+                        <span class="d-block">from_address : {{packageDetails.from_address}}</span>
+                        <span class="d-block">from_name : {{packageDetails.from_name}}</span>
+                        <span class="d-block">from_location : ({{packageDetails.from_location.lat}}, {{packageDetails.from_location.lng}})</span>
+                        <span class="d-block">to_address : {{packageDetails.to_name}}</span>
+                        <span class="d-block">to_name : {{packageDetails.to_name}}</span>
+                        <span class="d-block">to_location : ({{packageDetails.to_location.lat}}, {{packageDetails.to_location.lng}})</span>
+                        
+                        <h3 *ngIf="deliveryDetails">Delivery details</h3>
+                        <span class="d-block">packageid : {{ deliveryDetails.package_id }}</span>
+                        <span class="d-block">start time : {{ deliveryDetails.start_time }}</span>
+                        <span class="d-block">end time : {{ deliveryDetails.end_time }}</span>
+                        <span class="d-block">status : {{ deliveryDetails.status }}</span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div id="leafletMap" style="height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

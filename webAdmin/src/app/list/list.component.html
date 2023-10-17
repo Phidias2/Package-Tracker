@@ -1,0 +1,49 @@
+<div class="lists-container">
+
+  <!-- Display Packages -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Package List</h2>
+        <ul>
+          <li *ngFor="let package of packages">
+            {{ package.from_name }} -> {{ package.to_name }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <a routerLink="/create-package">
+          <button class="btn btn-primary">
+            Create package
+          </button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Delivery List</h2>
+        <ul>
+          <li *ngFor="let delivery of deliveries">
+            {{ delivery.package_id }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <a routerLink="/create-delivery">
+          <button class="btn btn-primary">
+            Create delivery
+          </button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
