@@ -2,6 +2,60 @@ const mongoose = require('mongoose');
 const {softDeletePlugin} = require('soft-delete-plugin-mongoose');
 const Schema = mongoose.Schema;
 
+/**
+*definitions:
+*    Location:
+*        type: object
+*properties:
+*    lat:
+*        type: number
+*lng:
+*    type: number
+*
+*Package:
+*    type: object
+*required:
+*    - from_name
+*    - from_address
+*    - from_location
+*    - to_name
+*    - to_address
+*    - to_location
+*properties:
+*    active_delivery_id:
+*        type: string
+*description: Reference to Delivery
+*description:
+*    type: string
+*weight:
+*    type: number
+*width:
+*    type: number
+*height:
+*    type: number
+*depth:
+*    type: number
+*from_name:
+*    type: string
+*description: Sender name
+*from_address:
+*    type: string
+*description: Sender address
+*from_location:
+*    $ref: '#/definitions/Location'
+*to_name:
+*    type: string
+*description: Receiver name
+*to_address:
+*    type: string
+*description: Receiver address
+*to_location:
+*    $ref: '#/definitions/Location'
+*created:
+*    type: string
+*format: date-time
+**/
+
 const LocationSchema = new Schema({
     lat: Number,
     lng: Number,
